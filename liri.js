@@ -9,16 +9,15 @@ var spotify = new Spotify(keys.spotify);
 var moment = require('moment');
 
 let input = process.argv[2];
-// let userIn = process.argv[3];
 
 if (input === 'spotify-this-song') {
     spotify_this_song(process.argv[3]);
 } else if (input === 'movie-this') {
     movie_this(process.argv[3]);
 } else if (input === 'do-what-it-says') {
-    do_what_it_says();
+    do_what_it_says()
 } else {
-    // Asks user to use one of the allowed functions
+    console.log('Use an accurate command')
 }
 
 function spotify_this_song(song) {
@@ -77,9 +76,7 @@ function do_what_it_says() {
         let toCall = data[0];
         let input = data[1];
 
-        if (toCall === 'concert-this') {
-            concert_this(input);
-        } else if (toCall === 'spotify-this-song') {
+        if (toCall === 'spotify-this-song') {
             spotify_this_song(input);
         } else if (toCall === 'movie-this') {
             movie_this(input);
